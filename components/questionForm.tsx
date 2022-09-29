@@ -2,8 +2,8 @@ import { Button, Card, TextField } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { API_URL } from "../../../utils/constant";
-import { PostQuestion, Room, User } from "../../api/types";
+import { API_URL } from "../utils/constant";
+import { PostQuestion, Room, User } from "../pages/api/types";
 
 type FormInput = {
   question: string;

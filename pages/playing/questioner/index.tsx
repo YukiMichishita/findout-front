@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import PlayingMember from "../members";
+import PlayingMember from "../../../components/members";
 import useUser from "../../../hooks/useUser";
-import QuestionForm from "./questionForm";
-import Questions from "../questions";
+import QuestionForm from "../../../components/questionForm";
+import Questions from "../../../components/questions";
 import { Typography } from "@mui/material";
 import useQuestion from "../../../hooks/useQuestion";
 import useRoom from "../../../hooks/useRoom";

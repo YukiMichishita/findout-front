@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import PlayingMember from "../members";
+import PlayingMember from "../../../components/members";
 import useUser from "../../../hooks/useUser";
-import Questions from "../questions";
+import Questions from "../../../components/questions";
 import { Typography } from "@mui/material";
 import useQuestion from "../../../hooks/useQuestion";
-import VoteForm from "../voteForm";
+import VoteForm from "../../../components/voteForm";
 import useRoom from "../../../hooks/useRoom";
 import useEndGame from "../../../hooks/useEndGame";
 

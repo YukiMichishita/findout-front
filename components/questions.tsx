@@ -1,6 +1,6 @@
 import { Card, Typography } from "@mui/material";
 import { FC } from "react";
-import { Question } from "../api/types";
+import { Question } from "../pages/api/types";
 
 type Props = {
   question: Question[];

@@ -1,7 +1,7 @@
 import { Button, Card } from "@mui/material";
 import { FC } from "react";
-import { API_URL } from "../../utils/constant";
-import { User } from "../api/types";
+import { API_URL } from "../utils/constant";
+import { User } from "../pages/api/types";
 
 type Props = {
   user: User | undefined;

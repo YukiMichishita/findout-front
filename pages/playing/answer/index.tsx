@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import PlayingMember from "../members";
+import PlayingMember from "../../../components/members";
 import useUser from "../../../hooks/useUser";
-import Questions from "../questions";
+import Questions from "../../../components/questions";
 import { Typography } from "@mui/material";
 import useQuestion from "../../../hooks/useQuestion";
-import AnswerForm from "./answerForm";
+import AnswerForm from "../../../components/answerForm";
 import useEndGame from "../../../hooks/useEndGame";
 
 const Real: NextPage = () => {

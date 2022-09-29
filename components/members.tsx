@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { FC } from "react";
-import useMember from "../../hooks/useMember";
-import { User } from "../api/types";
+import useMember from "../hooks/useMember";
+import { User } from "../pages/api/types";
 
 type Props = {
   user: User | undefined;
