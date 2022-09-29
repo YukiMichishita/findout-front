@@ -28,6 +28,7 @@ const Questions: FC<Props> = ({ question, real }) => {
             : q.realAnswer && (
                 <Typography>{`Bの回答 ${q.realAnswer}`}</Typography>
               )}
+              <br/>
         </Card>
       ))}
     </>

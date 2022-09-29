@@ -12,9 +12,10 @@ type FormInput = {
 type Props = {
   user: User;
   question: Question;
+  count :number;
 };
 
-const AnswerForm: FC<Props> = ({ user, question }) => {
+const AnswerForm: FC<Props> = ({ user, question,count }) => {
   const router = useRouter();
   const { register, handleSubmit } = useForm<FormInput>();
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
@@ -39,7 +40,7 @@ const AnswerForm: FC<Props> = ({ user, question }) => {
   return (
     <>
       <Card>
-        <Typography>{`Q. ${question.content}`}</Typography>
+        <Typography>{`質問${count}に答える`}</Typography>
         <TextField label="answer" {...register("answer")}></TextField>
         <Button onClick={handleSubmit(onSubmit)}>回答する</Button>
       </Card>

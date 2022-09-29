@@ -9,35 +9,26 @@ type Props = {
 
 const PlayingMember: FC<Props> = ({ user }) => {
   const { members } = useMember(user);
+  const real = members.find(m=>m.role==="REAL")
+  const fake = members.find(m=>m.role==="FAKE")
   return (
     <>
-      <Typography>本物</Typography>
-      {members
-        .filter((m) => m.role === "REAL")
-        .map((m) => (
-          <Typography key={m.name}>{m.name}</Typography>
-        ))}
+      <Typography>{`${fake?.name}さんが${real?.name}さんのフリをして質問に答えます。`}</Typography>
+      <Typography>{`AとBのどちらが本物の${real?.name}さんか当ててください！`}</Typography>
       <br />
-      <Typography>偽物</Typography>
-      {members
-        .filter((m) => m.role === "FAKE")
-        .map((m) => (
-          <Typography key={m.name}>{m.name}</Typography>
-        ))}
-      <br />
-      <Typography>質問者</Typography>
+      <Typography>以下の人は質問者です。1人につき1つ質問できます。</Typography>
       {members
         .filter((m) => m.role === "Questioner")
         .map((m, i) => (
           <Typography key={m.name}>{`${i + 1}. ${m.name}`}</Typography>
         ))}
       <br />
-      <Typography>投票者</Typography>
+      {/* <Typography>投票者</Typography>
       {members
         .filter((m) => m.role === "VOTER")
         .map((m) => (
           <Typography key={m.name}>{m.name}</Typography>
-        ))}
+        ))} */}
     </>
   );
 };

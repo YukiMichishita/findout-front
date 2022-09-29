@@ -6,19 +6,22 @@ import { Typography } from "@mui/material";
 import useQuestion from "../../../hooks/useQuestion";
 import AnswerForm from "../../../components/answerForm";
 import useEndGame from "../../../hooks/useEndGame";
+import useRoom from "../../../hooks/useRoom";
 
 const Real: NextPage = () => {
   const { user } = useUser();
   const { question } = useQuestion(user?.roomId);
+  const { room } = useRoom(user?.roomId);
   useEndGame();
 
   return (
     <>
       <PlayingMember user={user} />
       <br />
-      <Typography>質問</Typography>
+      <Questions question={question} real={room?.Real} />
+      <br />
       {user &&
-        question.map((q) => <AnswerForm key={q.id} question={q} user={user} />)}
+        question.map((q,i) => <AnswerForm key={q.id} question={q} user={user} count={i+1} />)}
     </>
   );
 };

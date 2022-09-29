@@ -20,7 +20,6 @@ const Questioner: NextPage = () => {
     <>
       <PlayingMember user={user} />
       <br />
-      <Typography>質問</Typography>
       <Questions question={question} real={room?.Real} />
       {user && <QuestionForm user={user} room={room} />}
     </>

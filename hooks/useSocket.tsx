@@ -10,7 +10,7 @@ interface Context {
 }
 
 //SOCKET_URLの中身のところに接続を要求
-const socket = io(SOCKET_URL);
+const socket = io(SOCKET_URL,{extraHeaders:{'ngrok-skip-browser-warning':"*"}});
 
 const SocketContext = createContext<Context>({
   socket,

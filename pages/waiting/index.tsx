@@ -18,7 +18,7 @@ const Waiting: NextPage = () => {
   const { socket } = useSockets();
   if (!user) return <></>;
   const onClick = async () => {
-    const res = await fetch(`${API_URL}/room/start-playng/${user.roomId}`);
+    const res = await fetch(`${API_URL}/room/start-playng/${user.roomId}`, {headers:{'ngrok-skip-browser-warning':'*'}});
     router.push("/playing");
   };
 
