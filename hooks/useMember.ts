@@ -9,7 +9,7 @@ const useMember = (user: User | undefined) => {
   useEffect(() => {
     if (!user?.roomId) return;
     const set = async () => {
-      const res = await fetch(`${API_URL}/user/room/${user.roomId}`);
+      const res = await fetch(`${API_URL}/user/room/${user.roomId}`,{headers:{'ngrok-skip-browser-warning':'*'}});
       const users = (await res.json()) as User[];
       setMembers(users);
     };

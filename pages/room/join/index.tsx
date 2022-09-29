@@ -14,7 +14,7 @@ const JoinRoom: NextPage = () => {
   const { register, handleSubmit } = useForm<FormInput>();
   const router = useRouter();
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
-    const roomRes = await fetch(`${API_URL}/room`, {method:"GET"})
+    const roomRes = await fetch(`${API_URL}/room`, {method:"GET", headers:{"ngrok-skip-browser-warning":"*"}})
     const rooms = (await roomRes.json()) as Room[];
     const roomIds = rooms.map(r=>r.id)
     if (!roomIds.includes(data.roomId) || !data.name)
@@ -31,6 +31,7 @@ const JoinRoom: NextPage = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
+        "ngrok-skip-browser-warning":"*",
       },
       body: JSON.stringify(newUser),
     });

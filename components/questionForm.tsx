@@ -27,6 +27,7 @@ const QuestionForm: FC<Props> = ({ user, room }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
+        "ngrok-skip-browser-warning":"*",
       },
       body: JSON.stringify(newQuestion),
     });

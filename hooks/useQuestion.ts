@@ -12,7 +12,7 @@ const useQuestion = (roomId: string | undefined) => {
   });
   useEffect(() => {
     const set = async () => {
-      const res = await fetch(`${API_URL}/question/room/${roomId}`);
+      const res = await fetch(`${API_URL}/question/room/${roomId}`,{headers:{'ngrok-skip-browser-warning':'*'}});
       const questions = (await res.json()) as Question[];
       setQuestion(questions);
     };

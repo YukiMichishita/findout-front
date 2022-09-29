@@ -7,7 +7,7 @@ const useRoom = (roomId: string | undefined) => {
   useEffect(() => {
     if (!roomId) return;
     const set = async () => {
-      const res = await fetch(`${API_URL}/room/${roomId}`);
+      const res = await fetch(`${API_URL}/room/${roomId}`,{headers:{'ngrok-skip-browser-warning':'*'}});
       const room = (await res.json()) as Room;
       setRoom(room);
     };

@@ -8,7 +8,7 @@ const useUser = () => {
     const set = async () => {
       const userId = sessionStorage.getItem("userId");
       if (!userId) throw new Error("user doesn't exist");
-      const res = await fetch(`${API_URL}/user/${userId}`);
+      const res = await fetch(`${API_URL}/user/${userId}`, {headers:{'ngrok-skip-browser-warning':"*"},});
       const user = (await res.json()) as User;
       setUser(user);
     };

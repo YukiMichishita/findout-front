@@ -16,6 +16,7 @@ const VoteForm: FC<Props> = ({ user, real }) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
+        "ngrok-skip-browser-warning":"*",
       },
       body: JSON.stringify(newUser),
     });

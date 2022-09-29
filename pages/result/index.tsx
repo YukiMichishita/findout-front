@@ -20,7 +20,7 @@ const Result: NextPage = () => {
     if (next) router.push("/playing");
   }, [next, router]);
   const onClick = async () => {
-    await fetch(`${API_URL}/next-game/${user?.roomId}`);
+    await fetch(`${API_URL}/next-game/${user?.roomId}`, {headers:{'ngrok-skip-browser-warning':'*'}});
   };
   return (
     <>
