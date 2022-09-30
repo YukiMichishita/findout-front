@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import React from "react";
 import Link from "next/link";
-import { Button } from "@mui/material";
+import { Button, Card } from "@mui/material";
 
 const Home: NextPage = () => {
   return (

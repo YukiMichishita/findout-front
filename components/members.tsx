@@ -9,14 +9,16 @@ type Props = {
 
 const PlayingMember: FC<Props> = ({ user }) => {
   const { members } = useMember(user);
-  const real = members.find(m=>m.role==="REAL")
-  const fake = members.find(m=>m.role==="FAKE")
+  const real = members.find((m) => m.role === "REAL");
+  const fake = members.find((m) => m.role === "FAKE");
   return (
     <>
-      <Typography>{`${fake?.name}さんが${real?.name}さんのフリをして質問に答えます。`}</Typography>
-      <Typography>{`AとBのどちらが本物の${real?.name}さんか当ててください！`}</Typography>
+      <Typography variant="h4">{`${fake?.name}さんが${real?.name}さんのフリをして質問に答えます。`}</Typography>
+      <Typography variant="h4">{`AとBのどちらが本物の${real?.name}さんか当ててください！`}</Typography>
       <br />
-      <Typography>以下の人は質問者です。1人につき1つ質問できます。</Typography>
+      <Typography variant="h6">
+        以下の人は質問者です。1人につき1つ質問できます。
+      </Typography>
       {members
         .filter((m) => m.role === "Questioner")
         .map((m, i) => (

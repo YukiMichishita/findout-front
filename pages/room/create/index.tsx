@@ -26,7 +26,7 @@ const CreateRoom: NextPage = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
-        "ngrok-skip-browser-warning":"*"
+        "ngrok-skip-browser-warning": "*",
       },
       body: JSON.stringify(newUser),
     });
@@ -36,9 +36,9 @@ const CreateRoom: NextPage = () => {
   };
 
   return (
-    <Card>
-      <TextField label="name" {...register("name")}></TextField>
-      <Button onClick={handleSubmit(onSubmit)}>Start</Button>
+    <Card sx={{ display: "flex", flexFlow: "column" }}>
+      <TextField label="名前" {...register("name")}></TextField>
+      <Button onClick={handleSubmit(onSubmit)}>部屋を作る</Button>
     </Card>
   );
 };

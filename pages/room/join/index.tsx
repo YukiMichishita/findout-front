@@ -14,12 +14,14 @@ const JoinRoom: NextPage = () => {
   const { register, handleSubmit } = useForm<FormInput>();
   const router = useRouter();
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
-    const roomRes = await fetch(`${API_URL}/room`, {method:"GET", headers:{"ngrok-skip-browser-warning":"*"}})
+    const roomRes = await fetch(`${API_URL}/room`, {
+      method: "GET",
+      headers: { "ngrok-skip-browser-warning": "*" },
+    });
     const rooms = (await roomRes.json()) as Room[];
-    const roomIds = rooms.map(r=>r.id)
-    if (!roomIds.includes(data.roomId) || !data.name)
-      return
-    
+    const roomIds = rooms.map((r) => r.id);
+    if (!roomIds.includes(data.roomId) || !data.name) return;
+
     const newUser: PostUser = {
       name: data.name,
       isOwner: false,
@@ -31,7 +33,7 @@ const JoinRoom: NextPage = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
-        "ngrok-skip-browser-warning":"*",
+        "ngrok-skip-browser-warning": "*",
       },
       body: JSON.stringify(newUser),
     });
@@ -44,7 +46,7 @@ const JoinRoom: NextPage = () => {
   };
 
   return (
-    <Card sx={{ display: "flex" }}>
+    <Card sx={{ display: "flex", flexFlow: "column" }}>
       <TextField label="部屋番号" {...register("roomId")}></TextField>
       <TextField label="名前" {...register("name")}></TextField>
       <Button onClick={handleSubmit(onSubmit)}>参加</Button>
